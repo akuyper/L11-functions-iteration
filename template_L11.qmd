@@ -1,0 +1,243 @@
+---
+title: "L11 Functions and Iteration"
+subtitle: "Data Science 1 with R (STAT 301-1)"
+author: "YOUR NAME"
+
+format:
+  html:
+    toc: true
+    embed-resources: true
+    code-fold: show
+    link-external-newwindow: true
+
+execute:
+  warning: false
+  
+from: markdown+emoji 
+---
+
+::: {.callout-tip icon=false}
+
+## Github Repo Link
+
+To link to your github **repo**sitory, appropriately edit the example link below. Meaning replace `https://your-github-repo-url` with your github repo url. Suggest verifying the link works before submitting.
+
+[https://your-github-repo-url](https://your-github-repo-url)
+:::
+
+## Overview
+
+The goal of this lab is to improve your programming skills and develop an appreciation for writing code. Remember that code is a communication tool, and that being able to write clear and concise code is extremely important. This resource may help:
+
+* [`purrr` tidyverse homepage ](https://purrr.tidyverse.org/)
+
+## Packages & Datasets
+
+Datasets referenced in this lab are from the `palmerpenguins` and `mpg` packages. 
+
+```{r}
+#| label: load-pkgs-data
+#| code-fold: false
+
+# Loading package(s)
+
+```
+
+## Exercises
+
+### Exercise 1 
+
+Practice turning the following code snippets into functions. Think about what each function does. What would you call it? How many arguments does it need?
+
+```{r}
+#| label: ex-01
+#| eval: false
+
+# function 1
+mean(is.na(x))
+
+# function 2
+x / sum(x, na.rm = TRUE)
+
+# function 3
+round(x / sum(x, na.rm = TRUE) * 100, 1)
+```
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+### Exercise 2
+
+Write a function that returns how old you are in years, given your birthday (as `"YYYY-MM-DD"`). 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+
+### Exercise 3
+
+Write a function that computes the mean, standard deviation, and count given a dataset and a numeric variable.
+
+Test your function using the `penguins` dataset and a numeric variable of your choice.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+### Exercise 4
+
+Write a function that counts the number of missing observations given a dataset and a variable.
+
+Test your function using the `penguins` dataset and a variable of your choice.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+
+### Exercise 5
+
+Write a function that draws a scatterplot given a dataset and x and y variables. Add a line of best fit and an appropriate title to the plot.
+
+Test your function using the `penguins` dataset and an x and y variable of your choice.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+
+### Exercise 6
+
+Use the `across()` function to...
+
+a) compute the number of unique values in each column of `penguins`
+b) compute the `mean` of every numeric column of `penguins`.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+
+### Exercise 7
+
+Write code that uses one of the map functions to:
+
+a) compute the number of unique values in each column of `penguins`
+b) compute the `mean` of numeric every column in `penguins`.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+***
+
+::: {.callout-note}
+
+So far we have used tidyverse tools to implement iterations. While these tools are adequate for most of our needs, they could be replaced with the use of `for` loops. A basic programming concept that we should be familiar with and comfortable implementing. 
+
+Accordingly Exercises 8-11 requires students to use `for` loops. 
+
+To understand for loops in R read [Section 27.5 `for` loops](https://r4ds.hadley.nz/base-r#for-loops) from R for Data Science.
+
+While not required it would be good practice, attempt to complete 8-11 using tidyverse tools for iteration. Will help students compare the tools and when datasets get larger there will be computational reasons for picking one over the other (meaning run times will be shorter). Generally speaking the tidyverse iterations tools run faster.
+
+:::
+
+***
+
+### Exercise 8
+
+Write a `for` loop that uses your function in Exercise 3 to compute the mean, standard deviation, and count of every numeric variable in the `penguins` dataset.
+
+Output the results as a nicely formatted table.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+### Exercise 9
+
+Write a `for` loop that plots the distribution of each variable in the `penguins` dataset and saves each plot to a `\plots` subdirectory. 
+
+Hint: need to determine if a variable is numeric or categorical to determine the appropriate plot.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+### Exercise 10
+
+Determine which variables in the `mpg` dataset should be factors and convert them to factors using a `for` loop.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+### Exercise 11
+
+The `data` subdirectory has various CSV files that you want to read in. 
+
+First, store their paths in a vector: `files <- dir("data/", pattern = "\\.csv$", full.names = TRUE)`.
+
+a) Write a for loop that will read in each file individually.
+
+b) Write a for loop that will load the files into a single data frame.
+
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
+
+
+## Graduate Challenge
+
+::: callout-important
+
+Graduate students are required to complete this challenge. **It is optional for undergraduate students.**
+
+:::
+
+
+Use the `across()` function to compute the mean, standard deviation, and count every numeric column of `penguins` and then use the `pivot_longer` function to organize this output as a nice table.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+YOUR SOLUTION HERE
+
+:::
