@@ -1,9 +1,9 @@
-# L11 - functions and iteration ----
+# L11: functions and iteration ----
 # Stat 301-1
 
-## load packages ----
+# load packages ----
 
 
-## Exercises ----
+# Exercises ----
 
-### Ex 1 ----
+## Ex 1 ----

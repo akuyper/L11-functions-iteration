@@ -2,18 +2,24 @@
 title: "L11 Functions and Iteration"
 subtitle: "Data Science 1 with R (STAT 301-1)"
 author: "YOUR NAME"
+pagetitle: "L11 YOUR NAME"
+date: today
 
 format:
   html:
     toc: true
+    toc-depth: 4
+    toc-location: left
     embed-resources: true
-    code-fold: show
+    code-fold: false
     link-external-newwindow: true
 
 execute:
   warning: false
-  
-from: markdown+emoji 
+
+from: markdown+emoji
+reference-location: margin
+citation-location: margin  
 ---
 
 ::: {.callout-tip icon=false}
@@ -37,7 +43,6 @@ Datasets referenced in this lab are from the `palmerpenguins` and `mpg` packages
 
 ```{r}
 #| label: load-pkgs-data
-#| code-fold: false
 
 # Loading package(s)
 
@@ -143,7 +148,7 @@ YOUR SOLUTION HERE
 Write code that uses one of the map functions to:
 
 a) compute the number of unique values in each column of `penguins`
-b) compute the `mean` of numeric every column in `penguins`.
+b) compute the `mean` of every numeric column in `penguins`.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -156,7 +161,7 @@ YOUR SOLUTION HERE
 
 ::: {.callout-note}
 
-So far we have used tidyverse tools to implement iterations. While these tools are adequate for most of our needs, they could be replaced with the use of `for` loops. A basic programming concept that we should be familiar with and comfortable implementing. 
+So far we have used tidyverse tools to implement iterations. While these tools are adequate for most of our needs, they could be replaced with `for` loops. A basic programming concept that we should be familiar with and comfortable implementing. 
 
 Accordingly Exercises 8-11 requires students to use `for` loops. 
 
@@ -166,13 +171,15 @@ While not required it would be good practice, attempt to complete 8-11 using tid
 
 :::
 
+:::
+
 ***
 
 ### Exercise 8
 
 Write a `for` loop that uses your function in Exercise 3 to compute the mean, standard deviation, and count of every numeric variable in the `penguins` dataset.
 
-Output the results as a nicely formatted table.
+Output the results as a nicely formatted html table.
 
 ::: {.callout-tip icon="false"}
 ## Solution
@@ -212,7 +219,6 @@ The `data` subdirectory has various CSV files that you want to read in.
 First, store their paths in a vector: `files <- dir("data/", pattern = "\\.csv$", full.names = TRUE)`.
 
 a) Write a for loop that will read in each file individually.
-
 b) Write a for loop that will load the files into a single data frame.
 
 
